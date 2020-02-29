@@ -7,7 +7,7 @@ pool:
     - npm
 
 variables:
-  buildConfiguration1: 'Release'
+  buildConfiguration: 'Release'
   wwwrootDir: 'WebApplication26/wwwroot'
   dotnetSdkVersion: '3.1.100'
 
