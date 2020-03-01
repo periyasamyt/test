@@ -5,9 +5,4 @@
     <ProjectGuid>9A19103F-16F7-4668-BE54-9A1E7A4F7556</ProjectGuid>
   </PropertyGroup>
 
-
-  <ItemGroup>
-  <PackageReference Include="Test.Models" Version="1.0.0-CI-20200301-104249" />
-  </ItemGroup>
-
 </Project>
