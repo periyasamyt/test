@@ -7,7 +7,7 @@
 
 
   <ItemGroup>
-  <PackageReference Include="Test.Models" Version="1.0.0-CI-20200301-092734" />
+  <PackageReference Include="Test.Models" Version="1.0.0-CI-20200301-104249" />
   </ItemGroup>
 
 </Project>

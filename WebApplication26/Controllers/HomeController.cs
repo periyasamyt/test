@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApplication26.Models;
+using Test.Models;
 
 namespace WebApplication26.Controllers
 {
