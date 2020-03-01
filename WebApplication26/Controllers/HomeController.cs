@@ -20,7 +20,8 @@ namespace WebApplication26.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            UserModel userModel = new UserModel { FirstName = "Test", UserName = "test123" };
+            return View(userModel);
         }
 
         public IActionResult Privacy()
