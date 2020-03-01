@@ -32,6 +32,14 @@ steps:
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
+- task: NuGetCommand@2
+  displayName: 'Restore project dependencies'
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: 'Test/Test.Models'
+
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
   inputs:
