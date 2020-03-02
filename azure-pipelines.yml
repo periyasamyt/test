@@ -1,7 +1,8 @@
 trigger:
 - '*'
 
-pool: 'MyAgentPool'
+pool: 
+    vmImage: 'windows-2019'
  
 variables:
   buildConfiguration: 'Release'
