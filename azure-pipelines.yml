@@ -6,18 +6,27 @@ variables:
 
 stages:
 - stage: 'Build'
-  displayName: 'Build Stage'
-  jobs:
+  displayName: 'Build the web application'
+  jobs: 
   - job: 'Build'
-    displayName: 'Build Job'
-    pool: 
-       vmImage:'ubuntu-latest'
+    displayName: 'Build job'
+    pool:
+      vmImage: 'ubuntu-16.04'
+      demands:
+        - npm
+
     steps:
     - task: UseDotNet@2
-      displayName: 'Install .Net core latest version'
+      displayName: 'Use .NET Core SDK'
       inputs:
-        packageType: sdk
         version: '3.x'
+
+    - task: Npm@1
+      displayName: 'Run npm install'
+      inputs:
+        verbose: false
+    - task: gulp@1
+      displayName: 'Run gulp tasks'
 
     - task: DotNetCoreCLI@2
       displayName: 'Restore project dependencies'
@@ -41,6 +50,5 @@ stages:
         arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
 
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: drop'
-      condition: succeeded()
+    - publish: '$(Build.ArtifactStagingDirectory)'
+      artifact: drop
