@@ -21,13 +21,6 @@ stages:
       inputs:
         version: '3.x'
 
-    - task: Npm@1
-      displayName: 'Run npm install'
-      inputs:
-        verbose: false
-    - task: gulp@1
-      displayName: 'Run gulp tasks'
-
     - task: DotNetCoreCLI@2
       displayName: 'Restore project dependencies'
       inputs:
@@ -50,5 +43,5 @@ stages:
         arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
 
-    - publish: '$(Build.ArtifactStagingDirectory)'
+    - publish: $(Build.ArtifactStagingDirectory)
       artifact: drop
