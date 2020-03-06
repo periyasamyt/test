@@ -73,7 +73,7 @@ stages:
             displayName: 'Azure App Service Deploy: website'
             inputs:
               appType: webAppLinux
-              azureSubscription: 'test-project'
+              azureSubscription: 'test'
               appName: '$(devenvironment1)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*26.zip'
 
